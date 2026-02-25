@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etmek | Premium Dresses</title>
+    <meta name="description" content="Discover the latest collection of premium, elegant dresses directly from Etmek.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo-link">
+                <img src="images/logo.jpg" alt="Etmek Logo" class="brand-logo">
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#hero">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="icon-btn mobile-menu-btn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu">
+            <button class="close-menu-btn" aria-label="Close Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <nav class="mobile-nav-links">
+                <a href="#hero">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <button class="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items">
+            <div class="empty-cart-message">Your bag is empty.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="total-price">₹0</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-bg">
+                <img src="images/model1.jpg" alt="Elegant dress on model">
+            </div>
+            <div class="hero-content">
+                <span class="subtitle slide-up">New Collection</span>
+                <h1 class="slide-up delay-1">Elegance<br>Redefined</h1>
+                <p class="slide-up delay-2">Discover our curated selection of premium dresses designed for the modern
+                    woman who embraces sophistication.</p>
+                <div class="hero-btns slide-up delay-3">
+                    <a href="#shop" class="btn btn-primary">Shop Now</a>
+                    <a href="#collections" class="btn btn-secondary">Explore</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories / Collections -->
+        <section id="collections" class="collections">
+            <div class="section-header">
+                <h2>Curated Collections</h2>
+                <a href="#" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="img-wrapper">
+                        <img src="images/model2.jpg" alt="Classic Whites">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Classic Whites</h3>
+                        <a href="#" class="shop-link">Shop Collection</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="img-wrapper">
+                        <img src="images/model3.jpg" alt="Everyday Comfort">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Everyday Comfort</h3>
+                        <a href="#" class="shop-link">Shop Collection</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3D Experience / Dynamic Element -->
+        <section id="experience" class="experience">
+            <div class="experience-container">
+                <div class="experience-content slide-up">
+                    <span class="subtitle">Immersive Experience</span>
+                    <h2>Made to move with you</h2>
+                    <p>Experience the flow and elegance of Etmek's premium fabrics from every angle.</p>
+                    <a href="#shop" class="btn btn-primary">Discover More</a>
+                </div>
+                <div class="model-viewer-container slide-up delay-2">
+                    <!-- Placeholder for actual 3D model (e.g., using model-viewer or Three.js) or a video loop -->
+                    <div class="model-placeholder">
+                        <img src="images/model1.jpg" alt="3D Model Placeholder" class="model-img">
+                        <div class="spinning-tag">
+                            <img src="images/tag1.jpg" alt="Etmek Brand Tag">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section id="shop" class="shop">
+            <div class="section-header text-center">
+                <h2>Featured Pieces</h2>
+                <p>Meticulously crafted for your moments.</p>
+            </div>
+            <div class="products-grid">
+                Product 1
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/model1.jpg" alt="Midnight Silk Slip">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="1" data-name="Midnight Silk Slip"
+                                data-price="20500" data-img="images/model1.jpg">Add
+                                to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Midnight Silk Slip</h4>
+                        <span class="product-price">₹20,500</span>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/model2.jpg" alt="Ivory Lace Gown">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="2" data-name="Ivory Lace Gown" data-price="31800"
+                                data-img="images/model2.jpg">Add
+                                to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Ivory Lace Gown</h4>
+                        <span class="product-price">₹31,800</span>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/model3.jpg" alt="Crimson Wrap Dress">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="3" data-name="Crimson Wrap Dress"
+                                data-price="16300" data-img="images/model3.jpg">Add
+                                to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Crimson Wrap Dress</h4>
+                        <span class="product-price">₹16,300</span>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/model2.jpg" alt="Noir Velvet Midi">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="4" data-name="Noir Velvet Midi" data-price="2000"
+                                data-img="images/model2.jpg">Add
+                                to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Noir Velvet Midi</h4>
+                        <span class="product-price">₹2,000</span>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/dress1.jpg" alt="Botanical Linen Dress">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="5" data-name="Botanical Linen Dress"
+                                data-price="3000" data-img="images/dress1.jpg">Add to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Botanical Linen Dress</h4>
+                        <span class="product-price">₹3,000</span>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/dress2.jpg" alt="Vibrant Madras Check Midi">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="6" data-name="Vibrant Madras Check Midi"
+                                data-price="2500" data-img="images/dress2.jpg">Add to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Vibrant Madras Check Midi</h4>
+                        <span class="product-price">₹2,500</span>
+                    </div>
+                </div>
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/dress3.jpg" alt="Monochrome Tulip Tunic">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="7" data-name="Monochrome Tulip Tunic"
+                                data-price="2000" data-img="images/dress3.jpg">Add to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Monochrome Tulip Tunic</h4>
+                        <span class="product-price">₹2,000</span>
+                    </div>
+                </div>
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/dress4.jpg" alt="Emerald Tropical Co-ord Set">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="8" data-name="Emerald Tropical Co-ord Set"
+                                data-price="2000" data-img="images/dress4.jpg">Add to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Emerald Tropical Co-ord Set</h4>
+                        <span class="product-price">₹2,000</span>
+                    </div>
+                </div>
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/dress5.jpg" alt="Lavender Daisy Maxi">
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-id="9" data-name="Lavender Daisy Maxi"
+                                data-price="1500" data-img="images/dress5.jpg">Add to Bag</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Lavender Daisy Maxi</h4>
+                        <span class="product-price">₹1,500</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Join the Etmek Club</h2>
+                <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo-link">
+                    <img src="images/logo.jpg" alt="Etmek Logo" class="brand-logo-footer">
+                </a>
+                <p>Elevating everyday moments with timeless, premium dresses designed for the modern aesthetic.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Shop</h4>
+                    <a href="#">New Arrivals</a>
+                    <a href="#">Best Sellers</a>
+                    <a href="#">Dresses</a>
+                    <a href="#">Accessories</a>
+                </div>
+                <div class="link-group">
+                    <h4>About</h4>
+                    <a href="#">Our Story</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Shipping & Returns</a>
+                    <a href="#">Size Guide</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Etmek. All Rights Reserved.</p>
+            <div class="legal-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
