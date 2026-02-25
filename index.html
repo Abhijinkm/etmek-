@@ -17,6 +17,10 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,6 +41,14 @@
             </nav>
 
             <div class="nav-actions">
+                <a href="https://www.instagram.com/abhijinkm/" target="_blank" rel="noopener noreferrer"
+                    class="icon-btn" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/919567964340" target="_blank" rel="noopener noreferrer" class="icon-btn"
+                    aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
                 <button class="icon-btn search-btn" aria-label="Search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -110,19 +122,19 @@
             <div class="collections-grid">
                 <div class="collection-card">
                     <div class="img-wrapper">
-                        <img src="images/model2.jpg" alt="Classic Whites">
+                        <img src="images/modern_collection_1.png" alt="Trendy Avant-Garde">
                     </div>
                     <div class="collection-info">
-                        <h3>Classic Whites</h3>
+                        <h3>Modern Avant-Garde</h3>
                         <a href="#" class="shop-link">Shop Collection</a>
                     </div>
                 </div>
                 <div class="collection-card">
                     <div class="img-wrapper">
-                        <img src="images/model3.jpg" alt="Everyday Comfort">
+                        <img src="images/modern_collection_2.png" alt="Urban Elegance">
                     </div>
                     <div class="collection-info">
-                        <h3>Everyday Comfort</h3>
+                        <h3>Urban Elegance</h3>
                         <a href="#" class="shop-link">Shop Collection</a>
                     </div>
                 </div>
@@ -312,9 +324,10 @@
                 </a>
                 <p>Elevating everyday moments with timeless, premium dresses designed for the modern aesthetic.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/abhijinkm/" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/919567964340" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -334,7 +347,9 @@
                 </div>
                 <div class="link-group">
                     <h4>Support</h4>
-                    <a href="#">Contact Us</a>
+                    <a href="mailto:abhijinkm35@gmail.com"><i class="fa-solid fa-envelope"></i>
+                        abhijinkm35@gmail.com</a>
+                    <a href="tel:9567964340"><i class="fa-solid fa-phone"></i> +91 9567964340</a>
                     <a href="#">FAQ</a>
                     <a href="#">Shipping & Returns</a>
                     <a href="#">Size Guide</a>
@@ -349,6 +364,96 @@
             </div>
         </div>
     </footer>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal-overlay" id="paymentModal">
+        <div class="payment-modal">
+            <button class="close-payment-btn" id="closePaymentBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="payment-header">
+                <h3>Complete Payment</h3>
+                <p>Total amount: <span class="payment-total-amount">₹0</span></p>
+            </div>
+            <div class="payment-body" id="paymentFormBody">
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Payment Method</label>
+                        <div class="payment-methods">
+                            <label class="payment-method-option">
+                                <input type="radio" name="paymentMethod" value="card" checked>
+                                <span class="method-details">
+                                    <i class="fa-regular fa-credit-card"></i> Credit/Debit Card
+                                </span>
+                            </label>
+                            <label class="payment-method-option">
+                                <input type="radio" name="paymentMethod" value="upi">
+                                <span class="method-details">
+                                    <i class="fa-brands fa-google-pay"></i> GPay / PhonePe / Paytm
+                                </span>
+                            </label>
+                            <label class="payment-method-option">
+                                <input type="radio" name="paymentMethod" value="cod">
+                                <span class="method-details">
+                                    <i class="fa-solid fa-truck"></i> Cash on Delivery
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="cardPaymentDetails" class="payment-details-section">
+                        <div class="form-group">
+                            <label>Card details</label>
+                            <div class="card-input-container">
+                                <input type="text" class="card-number" placeholder="Card number" maxlength="19"
+                                    required>
+                                <div class="card-input-row">
+                                    <input type="text" class="card-expiry" placeholder="MM / YY" maxlength="5" required>
+                                    <input type="text" class="card-cvc" placeholder="CVC" maxlength="4" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nameOnCard">Name on card</label>
+                            <input type="text" id="nameOnCard" placeholder="Name on card" required>
+                        </div>
+                    </div>
+
+                    <div id="upiPaymentDetails" class="payment-details-section" style="display: none;">
+                        <div class="form-group">
+                            <label for="upiId">UPI ID</label>
+                            <input type="text" id="upiId" placeholder="example@upi">
+                        </div>
+                        <p class="upi-hint">Supports Google Pay, PhonePe, Paytm, and other UPI apps.</p>
+                    </div>
+
+                    <div id="codPaymentDetails" class="payment-details-section" style="display: none;">
+                        <p class="cod-hint">Pay with cash when your order is delivered to your address.</p>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-payment-btn" id="submitPaymentBtn">
+                        <span class="btn-text">Pay Now</span>
+                        <div class="loader" style="display: none;"></div>
+                    </button>
+                </form>
+                <div class="secure-payment-badge">
+                    <i class="fa-solid fa-lock"></i> Secured by Etmek Payments
+                </div>
+            </div>
+            <div class="payment-success" id="paymentSuccess" style="display: none;">
+                <div class="success-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3>Payment Successful!</h3>
+                <p>Thank you for your purchase. We have sent your order confirmation to your email.</p>
+                <button class="btn btn-primary continue-shopping-btn" id="continueShoppingBtn">Continue
+                    Shopping</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/app.js"></script>
