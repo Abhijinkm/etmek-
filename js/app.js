@@ -263,44 +263,69 @@ document.addEventListener('DOMContentLoaded', () => {
             submitPaymentBtn.querySelector('.btn-text').textContent = 'Processing...';
             submitPaymentBtn.querySelector('.loader').style.display = 'inline-block';
 
-            // Simulate network request for payment processing
-            setTimeout(() => {
-                const userEmail = document.getElementById('email').value;
-                const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            const userEmail = document.getElementById('email').value;
+            const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
 
-                // --- EmailJS Integration ---
-                /* 
-                const templateParams = {
-                    to_email: userEmail,
-                    order_total: currentPaymentTotal,
-                    payment_method: selectedMethod,
-                };
-                
-                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-                    .then(function(response) {
-                       console.log('SUCCESS!', response.status, response.text);
-                    }, function(error) {
-                       console.log('FAILED...', error);
-                    });
-                */
+            // Call real backend API
+            fetch('/api/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    items: cart,
+                    total: currentPaymentTotal,
+                    email: userEmail,
+                    paymentMethod: selectedMethod
+                }),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    submitPaymentBtn.disabled = false;
 
-                paymentFormBody.style.display = 'none';
-                paymentSuccess.style.display = 'flex';
+                    // Show original button text
+                    if (selectedMethod === 'cod') {
+                        submitPaymentBtn.querySelector('.btn-text').textContent = 'Place Order';
+                    } else {
+                        submitPaymentBtn.querySelector('.btn-text').textContent = 'Pay ₹' + currentPaymentTotal;
+                    }
 
-                if (selectedMethod === 'cod') {
-                    paymentSuccess.querySelector('h3').textContent = 'Order Placed!';
-                    paymentSuccess.querySelector('p').textContent = `Thank you for your order. We will send an email confirmation to ${userEmail}. You can pay with cash upon delivery.`;
-                } else {
-                    paymentSuccess.querySelector('h3').textContent = 'Payment Successful!';
-                    paymentSuccess.querySelector('p').textContent = `Thank you for your purchase. We have sent your order confirmation to ${userEmail}.`;
-                }
+                    submitPaymentBtn.querySelector('.loader').style.display = 'none';
 
-                // Clear cart after successful payment
-                cart = [];
-                updateCartUI();
+                    paymentFormBody.style.display = 'none';
+                    paymentSuccess.style.display = 'flex';
 
-                // Keep the success message visible for a moment before they hit continue
-            }, 2500);
+                    if (selectedMethod === 'cod') {
+                        paymentSuccess.querySelector('h3').textContent = 'Order Placed!';
+                        paymentSuccess.querySelector('p').textContent = `Thank you for your order. We will send an email confirmation to ${userEmail}. You can pay with cash upon delivery.`;
+                    } else {
+                        paymentSuccess.querySelector('h3').textContent = 'Payment Successful!';
+                        paymentSuccess.querySelector('p').textContent = `Thank you for your purchase. We have sent your order confirmation to ${userEmail}.`;
+                    }
+
+                    // Clear cart after successful payment
+                    cart = [];
+                    updateCartUI();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+
+                    submitPaymentBtn.disabled = false;
+                    // Revert button text
+                    if (selectedMethod === 'cod') {
+                        submitPaymentBtn.querySelector('.btn-text').textContent = 'Place Order';
+                    } else {
+                        submitPaymentBtn.querySelector('.btn-text').textContent = 'Pay ₹' + currentPaymentTotal;
+                    }
+
+                    submitPaymentBtn.querySelector('.loader').style.display = 'none';
+                    alert('There was an error processing your order.');
+                });
         });
     }
 
