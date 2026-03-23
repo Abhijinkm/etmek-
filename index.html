@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etmek | Premium Dresses</title>
+    <meta name="description" content="Discover the latest collection of premium, elegant dresses directly from Etmek.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo-link">
+                <img src="images/logo.jpeg" alt="Etmek Logo" class="brand-logo">
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#hero">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://www.instagram.com/abhijinkm/" target="_blank" rel="noopener noreferrer"
+                    class="icon-btn" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/919567964340" target="_blank" rel="noopener noreferrer" class="icon-btn"
+                    aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="login.html" class="icon-btn auth-btn" aria-label="Login Account">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <button class="icon-btn admin-dashboard-btn" aria-label="Admin Dashboard" style="display: none;"
+                    title="Admin Dashboard">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </button>
+                <button class="icon-btn my-orders-btn" aria-label="My Orders" style="display: none;" title="My Orders">
+                    <i class="fa-solid fa-box-open"></i>
+                </button>
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="icon-btn mobile-menu-btn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu">
+            <button class="close-menu-btn" aria-label="Close Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <nav class="mobile-nav-links">
+                <a href="#hero">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <button class="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items">
+            <div class="empty-cart-message">Your bag is empty.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="total-price">₹0</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-bg">
+                <img src="images/model1.jpg" alt="Elegant dress on model">
+            </div>
+            <div class="hero-content">
+                <span class="subtitle slide-up">New Collection</span>
+                <h1 class="slide-up delay-1">Elegance<br>Redefined</h1>
+                <p class="slide-up delay-2">Discover our curated selection of premium dresses designed for the modern
+                    woman who embraces sophistication.</p>
+                <div class="hero-btns slide-up delay-3">
+                    <a href="#shop" class="btn btn-primary">Shop Now</a>
+                    <a href="#collections" class="btn btn-secondary">Explore</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories / Collections -->
+        <section id="collections" class="collections">
+            <div class="section-header">
+                <h2>Curated Collections</h2>
+                <a href="#" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="img-wrapper">
+                        <img src="images/modern_collection_1.png" alt="Trendy Avant-Garde">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Modern Avant-Garde</h3>
+                        <a href="#" class="shop-link">Shop Collection</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="img-wrapper">
+                        <img src="images/modern_collection_2.png" alt="Urban Elegance">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Urban Elegance</h3>
+                        <a href="#" class="shop-link">Shop Collection</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3D Experience / Dynamic Element -->
+        <section id="experience" class="experience">
+            <div class="experience-container">
+                <div class="experience-content slide-up">
+                    <span class="subtitle">Immersive Experience</span>
+                    <h2>Made to move with you</h2>
+                    <p>Experience the flow and elegance of Etmek's premium fabrics from every angle.</p>
+                    <a href="#shop" class="btn btn-primary">Discover More</a>
+                </div>
+                <div class="model-viewer-container slide-up delay-2">
+                    <!-- Placeholder for actual 3D model (e.g., using model-viewer or Three.js) or a video loop -->
+                    <div class="model-placeholder">
+                        <img src="images/model1.jpg" alt="3D Model Placeholder" class="model-img">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section id="shop" class="shop">
+            <div class="section-header text-center">
+                <h2>Featured Pieces</h2>
+                <p>Meticulously crafted for your moments.</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be injected here dynamically -->
+                <div style="text-align: center; grid-column: 1 / -1; padding: 3rem;">
+                    <div class="loader" style="border-color: #333; border-top-color: transparent;"></div>
+                    <p style="margin-top: 1rem;">Loading products...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Section -->
+        <section id="checkoutSection" class="checkout-section" style="display: none; padding: 6rem 2rem; max-width: 1200px; margin: 0 auto;">
+            <h2>Secure Checkout</h2>
+            <button class="btn btn-secondary go-back-btn" style="margin-bottom: 2rem;"><i class="fa-solid fa-arrow-left"></i> Back to Shop</button>
+            <div class="checkout-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                <div class="checkout-steps">
+                    <!-- Step 1: Delivery Address -->
+                    <div class="checkout-step" id="stepDelivery" style="background: #fff; padding: 2rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">1. Delivery Address</h3>
+                        <div id="savedAddressesArea" style="margin-bottom: 1rem;">
+                            <p style="color: #666;">Loading addresses...</p>
+                        </div>
+                        <button class="btn btn-secondary" id="addNewAddressBtn" style="margin-bottom: 1rem; width: 100%;">+ Add New Address</button>
+                        
+                        <form id="newAddressForm" style="display: none; background: #fafafa; padding: 1.5rem; border: 1px dashed #ccc; border-radius: 4px; margin-bottom: 1.5rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <input type="text" id="addrName" placeholder="Full Name" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; outline: none;">
+                                <input type="text" id="addrPhone" placeholder="10-digit Phone Number" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; outline: none;" pattern="[0-9]{10}">
+                            </div>
+                            <input type="text" id="addrStreet" placeholder="Street Address / Locality" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; margin-bottom: 1rem; outline: none;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                                <input type="text" id="addrCity" placeholder="City" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; outline: none;">
+                                <input type="text" id="addrState" placeholder="State" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; outline: none;">
+                                <input type="text" id="addrPincode" placeholder="Pincode" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; outline: none;">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 0.5rem;" id="saveAddressBtn">Save and Deliver Here</button>
+                            <button type="button" class="btn btn-secondary" id="cancelNewAddressBtn" style="width: 100%;">Cancel</button>
+                        </form>
+                    </div>
+
+                    <!-- Step 2: Payment Options -->
+                    <div class="checkout-step" id="stepPayment" style="background: #fff; padding: 2rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); opacity: 0.5; pointer-events: none;">
+                        <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">2. Payment Options</h3>
+                        
+                        <!-- Moved payment methods from Modal to Here -->
+                        <form id="checkoutPaymentForm">
+                            <div class="payment-methods">
+                                <label class="payment-method-option">
+                                    <input type="radio" name="checkoutPaymentMethod" value="card" checked>
+                                    <span class="method-details">
+                                        <i class="fa-regular fa-credit-card"></i> Credit / Debit / ATM Card
+                                    </span>
+                                </label>
+                                <label class="payment-method-option">
+                                    <input type="radio" name="checkoutPaymentMethod" value="upi">
+                                    <span class="method-details">
+                                        <i class="fa-brands fa-google-pay"></i> UPI (Google Pay, PhonePe, Paytm)
+                                    </span>
+                                </label>
+                                <label class="payment-method-option">
+                                    <input type="radio" name="checkoutPaymentMethod" value="netbanking">
+                                    <span class="method-details">
+                                        <i class="fa-solid fa-building-columns"></i> Net Banking
+                                    </span>
+                                </label>
+                                <label class="payment-method-option">
+                                    <input type="radio" name="checkoutPaymentMethod" value="wallet">
+                                    <span class="method-details">
+                                        <i class="fa-solid fa-wallet"></i> Wallets
+                                    </span>
+                                </label>
+                                <label class="payment-method-option">
+                                    <input type="radio" name="checkoutPaymentMethod" value="cod">
+                                    <span class="method-details">
+                                        <i class="fa-solid fa-truck"></i> Cash on Delivery
+                                    </span>
+                                </label>
+                            </div>
+                            <div id="checkoutPaymentDetailsSection" style="margin-top: 1rem; padding: 1rem; background: #f9f9f9; border: 1px solid #ddd; border-radius: 4px; display: none;">
+                                <!-- Dynamic payment details will go here based on selection -->
+                                <p id="paymentHintText" style="color: #666; font-size: 0.9rem;"></p>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="placeOrderBtn" style="width: 100%; margin-top: 1.5rem; font-size: 1.1rem; padding: 1.2rem;">
+                                Place Order
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="checkout-summary" style="background: #fff; padding: 2rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); height: fit-content; position: sticky; top: 100px;">
+                    <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">Price Details</h3>
+                    <div id="checkoutItemsList" style="margin-bottom: 1rem;">
+                        <!-- Items mirrored here -->
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: #666;">
+                        <span>Delivery Charges</span>
+                        <span style="color: #388e3c;">FREE</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2rem; border-top: 1px dashed #ccc; padding-top: 1rem;">
+                        <span>Amount Payable</span>
+                        <span id="checkoutTotalAmount">₹0</span>
+                    </div>
+                    <div style="background: #e8f5e9; color: #388e3c; padding: 0.8rem; text-align: center; border-radius: 4px; margin-top: 1.5rem; font-weight: 500;">
+                        Safe and Secure Payments
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Orders Section -->
+        <section id="myOrdersSection" style="display: none; padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; min-height: 80vh;">
+            <h2>My Orders</h2>
+            <button class="btn btn-secondary go-back-btn" style="margin-bottom: 2rem; margin-top: 1rem;"><i class="fa-solid fa-arrow-left"></i> Back to Shop</button>
+            <div id="myOrdersList" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <!-- Dynamic user orders -->
+                <div style="text-align: center; padding: 3rem;">
+                    <div class="loader" style="border-color: #333; border-top-color: transparent;"></div>
+                    <p style="margin-top: 1rem;">Loading your orders...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Join the Etmek Club</h2>
+                <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <form class="newsletter-form" action="https://formsubmit.co/abhijinkm35@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo-link">
+                    <img src="images/logo.jpeg" alt="Etmek Logo" class="brand-logo-footer">
+                </a>
+                <p>Elevating everyday moments with timeless, premium dresses designed for the modern aesthetic.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/abhijinkm/" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/919567964340" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Shop</h4>
+                    <a href="#">New Arrivals</a>
+                    <a href="#">Best Sellers</a>
+                    <a href="#">Dresses</a>
+                    <a href="#">Accessories</a>
+                </div>
+                <div class="link-group">
+                    <h4>About</h4>
+                    <a href="#">Our Story</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <a href="mailto:abhijinkm35@gmail.com"><i class="fa-solid fa-envelope"></i>
+                        abhijinkm35@gmail.com</a>
+                    <a href="tel:9567964340"><i class="fa-solid fa-phone"></i> +91 9567964340</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Shipping & Returns</a>
+                    <a href="#">Size Guide</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Etmek. All Rights Reserved.</p>
+            <div class="legal-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal-overlay" id="paymentModal">
+        <div class="payment-modal">
+            <button class="close-payment-btn" id="closePaymentBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="payment-header">
+                <h3>Complete Payment</h3>
+                <p>Total amount: <span class="payment-total-amount">₹0</span></p>
+            </div>
+            <div class="payment-body" id="paymentFormBody">
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Payment Method</label>
+                        <div class="payment-methods">
+                            <label class="payment-method-option">
+                                <input type="radio" name="paymentMethod" value="card" checked>
+                                <span class="method-details">
+                                    <i class="fa-regular fa-credit-card"></i> Credit/Debit Card
+                                </span>
+                            </label>
+                            <label class="payment-method-option">
+                                <input type="radio" name="paymentMethod" value="upi">
+                                <span class="method-details">
+                                    <i class="fa-brands fa-google-pay"></i> GPay / PhonePe / Paytm
+                                </span>
+                            </label>
+                            <label class="payment-method-option">
+                                <input type="radio" name="paymentMethod" value="cod">
+                                <span class="method-details">
+                                    <i class="fa-solid fa-truck"></i> Cash on Delivery
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="cardPaymentDetails" class="payment-details-section">
+                        <div class="form-group">
+                            <label>Card details</label>
+                            <div class="card-input-container">
+                                <input type="text" class="card-number" placeholder="Card number" maxlength="19"
+                                    required>
+                                <div class="card-input-row">
+                                    <input type="text" class="card-expiry" placeholder="MM / YY" maxlength="5" required>
+                                    <input type="text" class="card-cvc" placeholder="CVC" maxlength="4" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nameOnCard">Name on card</label>
+                            <input type="text" id="nameOnCard" placeholder="Name on card" required>
+                        </div>
+                    </div>
+
+                    <div id="upiPaymentDetails" class="payment-details-section" style="display: none;">
+                        <div class="form-group">
+                            <label for="upiId">UPI ID</label>
+                            <input type="text" id="upiId" placeholder="example@upi">
+                        </div>
+                        <p class="upi-hint">Supports Google Pay, PhonePe, Paytm, and other UPI apps.</p>
+                    </div>
+
+                    <div id="codPaymentDetails" class="payment-details-section" style="display: none;">
+                        <p class="cod-hint">Pay with cash when your order is delivered to your address.</p>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-payment-btn" id="submitPaymentBtn">
+                        <span class="btn-text">Pay Now</span>
+                        <div class="loader" style="display: none;"></div>
+                    </button>
+                </form>
+                <div class="secure-payment-badge">
+                    <i class="fa-solid fa-lock"></i> Secured by Etmek Payments
+                </div>
+            </div>
+            <div class="payment-success" id="paymentSuccess" style="display: none;">
+                <div class="success-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3>Payment Successful!</h3>
+                <p>Thank you for your purchase. We have sent your order confirmation to your email.</p>
+                <button class="btn btn-primary continue-shopping-btn" id="continueShoppingBtn">Continue
+                    Shopping</button>
+            </div>
+        </div>
+    </div>
+    <!-- Auth Modal -->
+    <div class="payment-modal-overlay" id="authModal">
+        <div class="payment-modal auth-modal">
+            <button class="close-payment-btn" id="closeAuthBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="payment-header">
+                <h3 id="authModalTitle">Login</h3>
+                <p id="authModalDesc">Welcome back to Etmek.</p>
+            </div>
+            <div class="payment-body">
+                <form id="authForm">
+                    <div class="form-group">
+                        <label for="authEmail">Email address</label>
+                        <input type="email" id="authEmail" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="authPassword">Password</label>
+                        <input type="password" id="authPassword" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-payment-btn" id="submitAuthBtn">
+                        <span class="btn-text">Log In</span>
+                        <div class="loader" style="display: none;"></div>
+                    </button>
+                    <p class="auth-switch-text">
+                        <span id="authSwitchPrompt">Don't have an account?</span>
+                        <a href="#" id="authSwitchLink">Register here</a>
+                    </p>
+                </form>
+            </div>
+            <div class="payment-success" id="authSuccess" style="display: none;">
+                <div class="success-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 id="authSuccessTitle">Success!</h3>
+                <p id="authSuccessDesc">You are now logged in.</p>
+                <button class="btn btn-primary continue-shopping-btn" id="closeAuthSuccessBtn">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal -->
+    <div class="payment-modal-overlay" id="adminModal">
+        <div class="payment-modal admin-modal" style="max-width: 900px; width: 95%;">
+            <button class="close-payment-btn" id="closeAdminBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="payment-header">
+                <h3>Admin Dashboard</h3>
+                <p>Manage Etmek Platform</p>
+                <div class="admin-tabs" style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; border-bottom: 1px solid #eee;">
+                    <button id="tabOrdersBtn" style="padding: 0.5rem 1rem; font-weight: 500; border-bottom: 2px solid var(--clr-accent); color: var(--clr-accent);">Orders</button>
+                    <button id="tabProductsBtn" style="padding: 0.5rem 1rem; font-weight: 500; color: #666; border-bottom: 2px solid transparent;">Products</button>
+                </div>
+            </div>
+            <div class="payment-body" style="padding: 1.5rem;">
+                <!-- Orders View -->
+                <div id="adminViewOrders">
+                    <div class="admin-actions" style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="margin: 0;">Recent Orders</h4>
+                        <div>
+                            <button class="btn btn-secondary" id="refreshOrdersBtn" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-rotate-right"></i> Refresh</button>
+                            <button class="btn btn-secondary" id="logoutAdminBtn" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                        </div>
+                    </div>
+                    <div class="orders-container" style="max-height: 400px; overflow-y: auto;">
+                        <table class="orders-table" style="width: 100%; text-align: left; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
+                                    <th style="padding: 12px 10px;">ID</th>
+                                    <th style="padding: 12px 10px;">Customer</th>
+                                    <th style="padding: 12px 10px;">Total</th>
+                                    <th style="padding: 12px 10px;">Method</th>
+                                    <th style="padding: 12px 10px;">Status / Action</th>
+                                    <th style="padding: 12px 10px;">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody">
+                                <!-- Orders will be loaded here -->
+                            </tbody>
+                        </table>
+                        <div id="adminLoader" style="text-align: center; display: none; padding: 20px;">
+                            <div class="loader" style="display: inline-block; border-color: #000; border-top-color: transparent;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products View -->
+                <div id="adminViewProducts" style="display: none;">
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <h4 style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">Add New Product</h4>
+                            <form id="adminAddProductForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                                <input type="text" id="adminProdName" placeholder="Product Name" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; border-radius: 4px; outline: none;">
+                                <input type="number" id="adminProdPrice" placeholder="Price (₹)" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; border-radius: 4px; outline: none;">
+                                <input type="text" id="adminProdImg" placeholder="Image URL (e.g. images/dress1.jpg)" required style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; border-radius: 4px; outline: none;">
+                                <input type="text" id="adminProdCat" placeholder="Category" style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; border-radius: 4px; outline: none;">
+                                <textarea id="adminProdDesc" placeholder="Description" style="padding: 0.8rem; border: 1px solid #ccc; width: 100%; border-radius: 4px; outline: none; resize: vertical; min-height: 80px;"></textarea>
+                                <button type="submit" class="btn btn-primary" id="adminAddProdSubmitBtn">Add Product</button>
+                            </form>
+                        </div>
+                        <div style="flex: 2; min-width: 300px;">
+                            <h4 style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">Manage Catalog</h4>
+                            <div id="adminProdList" style="max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; padding-right: 0.5rem;">
+                                <p style="color: #666;">Loading products...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

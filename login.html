@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration | Etmek</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--clr-bg);
+            padding: 2rem;
+        }
+
+        .auth-container {
+            background: #fff;
+            max-width: 450px;
+            width: 100%;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .auth-logo {
+            width: 120px;
+            margin-bottom: 2rem;
+        }
+
+        .auth-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text);
+        }
+
+        .auth-subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .auth-form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .auth-form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .auth-form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .auth-form-group input:focus {
+            border-color: var(--clr-accent);
+        }
+
+        .auth-btn-submit {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        .auth-toggle {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .auth-toggle a {
+            color: var(--clr-accent);
+            font-weight: 500;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .auth-error {
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        .back-to-home {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: var(--clr-text);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .back-to-home:hover {
+            color: var(--clr-accent);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home"><i class="fa-solid fa-arrow-left"></i> Home</a>
+    
+    <div class="auth-page">
+        <div class="auth-container">
+            <a href="index.html">
+                <img src="images/logo.jpeg" alt="Etmek" class="auth-logo">
+            </a>
+            <h1 class="auth-title" id="pageTitle">Welcome Back</h1>
+            <p class="auth-subtitle" id="pageSubtitle">Sign in to your Etmek account</p>
+            
+            <div id="errorMessage" class="auth-error"></div>
+
+            <form id="authPageForm">
+                <div class="auth-form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                <div class="auth-form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required minlength="6">
+                </div>
+                <div id="registrationFields" style="display: none;">
+                    <div class="auth-form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="John Doe">
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="phone">Mobile Number</label>
+                        <input type="text" id="phone" placeholder="10-digit number" pattern="[0-9]{10}">
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="street">Street Address</label>
+                        <input type="text" id="street" placeholder="123 Example Street">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="auth-form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" placeholder="City">
+                        </div>
+                        <div class="auth-form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" placeholder="State">
+                        </div>
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="pincode">Pincode</label>
+                        <input type="text" id="pincode" placeholder="Pincode">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary auth-btn-submit" id="submitBtn">
+                    <span class="btn-text">Sign In</span>
+                </button>
+            </form>
+
+            <div class="auth-toggle">
+                <span id="toggleText">Don't have an account?</span> 
+                <a id="toggleLink">Register here</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLocalhost = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' || window.location.protocol === 'file:';
+            const API_BASE = isLocalhost && window.location.port !== '3000' ? 'http://127.0.0.1:3000' : '';
+            
+            const form = document.getElementById('authPageForm');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const toggleLink = document.getElementById('toggleLink');
+            const submitBtnText = document.querySelector('.btn-text');
+            const pageTitle = document.getElementById('pageTitle');
+            const pageSubtitle = document.getElementById('pageSubtitle');
+            const errorMessage = document.getElementById('errorMessage');
+            const toggleText = document.getElementById('toggleText');
+
+            let isLoginMode = true;
+
+            // If user is already logged in, redirect to index
+            if (localStorage.getItem('etmek_jwt')) {
+                window.location.href = 'index.html';
+            }
+
+            toggleLink.addEventListener('click', () => {
+                isLoginMode = !isLoginMode;
+                errorMessage.style.display = 'none';
+                
+                if (isLoginMode) {
+                    pageTitle.textContent = 'Welcome Back';
+                    pageSubtitle.textContent = 'Sign in to your Etmek account';
+                    submitBtnText.textContent = 'Sign In';
+                    toggleText.textContent = "Don't have an account?";
+                    toggleLink.textContent = 'Register here';
+                    document.getElementById('registrationFields').style.display = 'none';
+                } else {
+                    pageTitle.textContent = 'Create Account';
+                    pageSubtitle.textContent = 'Join Etmek to track your orders';
+                    submitBtnText.textContent = 'Register';
+                    toggleText.textContent = 'Already have an account?';
+                    toggleLink.textContent = 'Sign in here';
+                    document.getElementById('registrationFields').style.display = 'block';
+                }
+            });
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                submitBtnText.textContent = 'Processing...';
+                errorMessage.style.display = 'none';
+
+                const endpoint = isLoginMode ? '/api/login' : '/api/register';
+                
+                const requestData = {
+                    email: emailInput.value,
+                    password: passwordInput.value
+                };
+
+                if (!isLoginMode) {
+                    const fullName = document.getElementById('fullName').value;
+                    const phone = document.getElementById('phone').value;
+                    const street = document.getElementById('street').value;
+                    const city = document.getElementById('city').value;
+                    const state = document.getElementById('state').value;
+                    const pincode = document.getElementById('pincode').value;
+                    
+                    if(!fullName || !phone || !street || !city || !state || !pincode) {
+                        errorMessage.textContent = 'Please fill out all contact and address details to register.';
+                        errorMessage.style.display = 'block';
+                        submitBtnText.textContent = 'Register';
+                        return;
+                    }
+
+                    Object.assign(requestData, { fullName, phone, street, city, state, pincode });
+                }
+
+                try {
+                    const response = await fetch(API_BASE + endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(requestData)
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.error || 'Something went wrong');
+                    }
+
+                    if (isLoginMode) {
+                        localStorage.setItem('etmek_jwt', data.token);
+                        localStorage.setItem('etmek_role', data.role);
+                        localStorage.setItem('etmek_email', data.email);
+                        window.location.href = 'index.html'; // Redirect to home
+                    } else {
+                        // Registration success
+                        alert('Registration successful! Please sign in.');
+                        toggleLink.click(); // Switch back to login
+                        emailInput.value = data.email || emailInput.value;
+                        passwordInput.value = '';
+                    }
+
+                } catch (error) {
+                    errorMessage.textContent = error.message;
+                    errorMessage.style.display = 'block';
+                } finally {
+                    submitBtnText.textContent = isLoginMode ? 'Sign In' : 'Register';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
